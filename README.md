@@ -1,13 +1,27 @@
-# keymouse_autoreflash
-模拟键盘鼠标操作，自动刷新桌面然后返回原窗口，欺骗后台认为用户处于活跃状态，且支持电脑锁屏,支持任意linux widnows，macos
-1.程序编译运行
-   cargo run -- 60 
-   //表示每60分钟运行依次
-2.# 构建发布版本
-  cargo build --release
+# KeyMouse AutoReflash
 
-3. # 针对特定平台优化
-  cargo build --release --target x86_64-unknown-linux-gnu
-4. 运行
-  ./deskshow.exe 120
+一个跨平台的键盘鼠标模拟工具，用于自动保持系统活跃状态。
 
+## 功能特性
+
+- 🖱️ 模拟键盘鼠标操作，自动刷新桌面
+- 🔄 操作后自动返回原窗口，无感切换
+- ⏰ 可自定义执行间隔时间
+- 🔒 支持电脑锁屏检测
+- 🌍 跨平台支持：Linux、Windows、macOS
+- 🎯 后台运行，欺骗系统认为用户处于活跃状态
+
+## 安装与编译
+
+### 从源码编译
+
+```bash
+# 克隆项目
+git clone <repository-url>
+cd keymouse_autoreflash
+
+# 调试运行（每60分钟执行一次）
+cargo run -- 60
+
+# 构建发布版本
+cargo build --release
