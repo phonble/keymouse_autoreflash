@@ -25,3 +25,9 @@ cargo run -- 60
 
 # 构建发布版本
 cargo build --release
+
+# 直接运行示例（每60分钟执行一次）
+./target/release/keymouse_autoreflash 60
+
+# 每30分钟执行一次
+./target/release/keymouse_autoreflash 30
