@@ -1,0 +1,9 @@
+[package]
+name = "desktop_refresher"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+tokio = { version = "1.48.0", features = ["full"] }
+rdev = "0.5.3"
+clap = { version = "4.5.4", features = ["derive"] }  # 添加命令行解析库
