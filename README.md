@@ -153,9 +153,15 @@ When triggered, the program uses the **rdev library** to execute real system-lev
 
 ### Download Pre-built Binary / 下载预编译版本
 
-Download the latest release from [GitHub Releases](https://github.com/phonble/keymouse_autoreflash/releases)
+**Recommended for most users / 推荐大多数用户使用**
 
-从 [GitHub Releases](https://github.com/phonble/keymouse_autoreflash/releases) 下载最新版本
+Download the latest Windows executable from [GitHub Releases](https://github.com/phonble/keymouse_autoreflash/releases)
+
+从 [GitHub Releases](https://github.com/phonble/keymouse_autoreflash/releases) 下载最新的 Windows 可执行文件
+
+**Available releases / 可用版本:**
+- v1.1.0 (Latest) - `keymouse_autoreflash.exe` with enhanced features
+- v1.0.0 - `keymouse_autoreflash.exe` initial release
 
 ### Build from Source / 从源码编译
 
@@ -184,11 +190,30 @@ cargo run -- 60
 # Build release version / 构建发布版本
 cargo build --release
 
-# Run directly (execute every 60 minutes) / 直接运行示例（每60分钟执行一次）
-./target/release/keymouse_autoreflash 60
+# For Windows cross-compilation (recommended) / Windows 交叉编译（推荐）
+cargo build --release --target x86_64-pc-windows-gnu
+```
 
-# Execute every 30 minutes / 每30分钟执行一次
-./target/release/keymouse_autoreflash 30
+#### Executable Location / 可执行文件位置
+
+After building, find the executable:
+
+- **Windows native build**: `target\release\keymouse_autoreflash.exe`
+- **Linux/macOS native build**: `target/release/keymouse_autoreflash`
+- **Cross-compile for Windows**: `target/x86_64-pc-windows-gnu/release/keymouse_autoreflash.exe`
+
+#### Usage Examples / 使用示例
+
+```bash
+# Windows (from command prompt)
+keymouse_autoreflash.exe          # Use default 30 min interval
+keymouse_autoreflash.exe 60       # Execute every 60 minutes
+keymouse_autoreflash.exe 30 1     # Refresh every 30 min, check every 1 min
+
+# Linux/macOS
+./keymouse_autoreflash            # Use default 30 min interval
+./keymouse_autoreflash 60         # Execute every 60 minutes
+./keymouse_autoreflash 30 1       # Refresh every 30 min, check every 1 min
 ```
 
 #### Cross-compile for Windows (from Linux) / 从 Linux 交叉编译 Windows 版本
