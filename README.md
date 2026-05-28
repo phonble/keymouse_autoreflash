@@ -27,10 +27,10 @@ A cross-platform desktop automation tool that monitors mouse activity and automa
 
 ```bash
 # Use default parameters (30 min refresh, 1 min check)
-mouse_position_printer.exe
+keymouse_autoreflash.exe
 
 # Custom parameters
-mouse_position_printer.exe [refresh_interval] [check_interval]
+keymouse_autoreflash.exe [refresh_interval] [check_interval]
 ```
 
 ## 🔧 Parameters
@@ -45,47 +45,47 @@ mouse_position_printer.exe [refresh_interval] [check_interval]
 
 ```bash
 # 1. Use default values (recommended)
-mouse_position_printer.exe
+keymouse_autoreflash.exe
 # Equivalent to: refresh every 30 minutes, check mouse every 1 minute
 
 # 2. 60 min refresh, 2 min check
-mouse_position_printer.exe 60 2
+keymouse_autoreflash.exe 60 2
 
 # 3. 15 min refresh, 30 sec check
-mouse_position_printer.exe 15 0.5
+keymouse_autoreflash.exe 15 0.5
 
 # 4. 45 min refresh, 5 min check
-mouse_position_printer.exe 45 5
+keymouse_autoreflash.exe 45 5
 
 # 5. View help
-mouse_position_printer.exe --help
+keymouse_autoreflash.exe --help
 ```
 
 ## ⚠️ Parameter Validation Examples
 
 ```bash
 # ❌ Error: Check interval too large (equals half)
-mouse_position_printer.exe 30 15
+keymouse_autoreflash.exe 30 15
 # Error: Check interval (15.00 min) must be less than half of refresh interval (15.00 min)
 
 # ❌ Error: Check interval too large (exceeds half)
-mouse_position_printer.exe 30 20
+keymouse_autoreflash.exe 30 20
 # Error: Check interval (20.00 min) must be less than half of refresh interval (15.00 min)
 
 # ✅ Correct: Check interval less than half
-mouse_position_printer.exe 30 14.9
+keymouse_autoreflash.exe 30 14.9
 # Validation passed
 
 # ❌ Error: Negative value
-mouse_position_printer.exe -10 1
+keymouse_autoreflash.exe -10 1
 # Error: Refresh interval must be greater than 0
 
 # ❌ Error: Zero value
-mouse_position_printer.exe 30 0
+keymouse_autoreflash.exe 30 0
 # Error: Check interval must be greater than 0
 
 # ❌ Error: Non-numeric
-mouse_position_printer.exe abc 1
+keymouse_autoreflash.exe abc 1
 # Error: Refresh interval 'abc' is not a valid number
 ```
 
@@ -197,7 +197,7 @@ cargo build --release
 cargo build --release --target x86_64-pc-windows-gnu
 
 # Executable location / 可执行文件位置
-target/x86_64-pc-windows-gnu/release/mouse_position_printer.exe
+target/x86_64-pc-windows-gnu/release/keymouse_autoreflash.exe
 ```
 
 #### Build Optimization (Optional) / 构建优化（可选）
